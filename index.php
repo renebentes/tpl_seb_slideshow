@@ -47,7 +47,7 @@ if (!empty($items)) : ?>
 <div id="<?php echo $id; ?>" class="carousel<?php echo $cck->getStyleParam('event') == 1 ? ' slide' : null; ?>" data-ride="carousel">
 	<ol class="carousel-indicators">
   <?php for($i = 0; $i < $count; $i++) : ?>
-    <li data-target="#<?php echo $id; ?>" data-slide-to="<?php echo $i ?>"<?php echo $i == 0 ? 'class="active"' : null;?>></li>
+    <li data-target="#<?php echo $id; ?>" data-slide-to="<?php echo $i ?>"<?php echo $i == 0 ? ' class="active"' : null;?>></li>
   <?php endfor; ?>
   </ol>
 	<div class="carousel-inner" role="listbox">
