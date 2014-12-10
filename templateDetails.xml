@@ -53,6 +53,7 @@
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field>
+				<field name="variation_default" type="cck" construction="core_variation" default="seb_css3" label="TPL_SEB_SLIDESHOW_DEFAULT_VARIATION" description="" class="inputbox" />
 			</fieldset>
 		</fields>
 	</config>
