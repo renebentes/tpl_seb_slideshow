@@ -18,7 +18,7 @@ if ($cck->initialize() === false)
 
 // -- Prepare
 $items = $cck->getItems();
-$count = count($items);
+$count = 0;
 $id    = !empty($cck->id_class) ? trim($cck->id_class) : 'generic-slideshow';
 
 if ($cck->getStyleParam('navigator') == 1)
@@ -44,7 +44,7 @@ else
 
 // -- Render
 if (!empty($items)) : ?>
-<div id="<?php echo $id; ?>" class="carousel<?php echo $cck->getStyleParam('event') == 1 ? ' slide' : null; ?>" data-ride="carousel">
+<div id="<?php echo $id; ?>" class="carousel slide" data-ride="carousel">
 	<ol class="carousel-indicators">
   <?php for($i = 0; $i < $count; $i++) : ?>
     <li data-target="#<?php echo $id; ?>" data-slide-to="<?php echo $i ?>"<?php echo $i == 0 ? ' class="active"' : null;?>></li>
@@ -52,12 +52,13 @@ if (!empty($items)) : ?>
   </ol>
 	<div class="carousel-inner" role="listbox">
 	<?php foreach ($items as $key => $item) : ?>
-		<div class="item<?php echo $key == 0 ? ' active' : null; ?>">
+		<div class="item<?php echo $count == 0 ? ' active' : null; ?>">
 			<?php echo $cck->renderItem($key); ?>
 		</div>
-	<?php endforeach; ?>
+	<?php $count++;
+  endforeach; ?>
 	</div>
-	<?php if($count > 1 && $cck->getStyleParam('navigator') != -1) : ?>
+<?php if($count > 1 && $cck->getStyleParam('navigator') != -1) : ?>
   <a class="left carousel-control" href="#<?php echo $id; ?>" role="button" data-slide="prev">
   	<span class="<?php echo $navLeft; ?>"></span>
   	<span class="sr-only">Previous</span>

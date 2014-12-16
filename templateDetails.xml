@@ -8,7 +8,7 @@
   <authorUrl></authorUrl>
   <copyright>Copyright (C) 2014 Rene Bentes Pinto, Inc. All rights reserved.</copyright>
   <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
   <description>TPL_SEB_SLIDESHOW_XML_DESCRIPTION</description>
 	<files>
 		<folder>css</folder>
@@ -48,10 +48,6 @@
 					<option value="0">TPL_SEB_SLIDESHOW_NAVIGATOR_ICON_VALUE</option>
 					<option value="1">TPL_SEB_SLIDESHOW_NAVIGATOR_GLYPH_VALUE</option>
 					<option value="2">TPL_SEB_SLIDESHOW_NAVIGATOR_FA_VALUE</option>
-				</field>
-				<field name="event" type="list" default="1" label="TPL_SEB_SLIDESHOW_EVENT_LABEL" description="TPL_SEB_SLIDESHOW_EVENT_DESC">
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
 				</field>
 				<field name="variation_default" type="cck" construction="core_variation" default="seb_css3" label="TPL_SEB_SLIDESHOW_DEFAULT_VARIATION" description="" class="inputbox" />
 			</fieldset>
