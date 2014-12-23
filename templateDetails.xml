@@ -8,7 +8,7 @@
   <authorUrl></authorUrl>
   <copyright>Copyright (C) 2014 Rene Bentes Pinto, Inc. All rights reserved.</copyright>
   <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-  <version>0.1.2</version>
+  <version>0.1.3</version>
   <description>TPL_SEB_SLIDESHOW_XML_DESCRIPTION</description>
 	<files>
 		<folder>css</folder>
@@ -43,13 +43,14 @@
 				<field name="cck_client_item" type="hidden" default="1" />
 				<field name="field_label" type="cck" construction="core_field_label" default="1" label="TPL_SEB_SLIDESHOW_SHOW_LABEL" description="" class="inputbox" />
 				<field name="field_description" type="cck" construction="core_field_description" default="0" label="TPL_SEB_SLIDESHOW_SHOW_DESCRIPTION" description="" class="inputbox" />
+				<field name="variation_default" type="cck" construction="core_variation" default="seb_css3" label="TPL_SEB_SLIDESHOW_DEFAULT_VARIATION" description="" class="inputbox" />
 				<field name="navigator" type="list" default="0" label="TPL_SEB_SLIDESHOW_NAVIGATOR_LABEL" description="TPL_SEB_SLIDESHOW_NAVIGATOR_DESC">
 					<option value="-1">JNONE</option>
 					<option value="0">TPL_SEB_SLIDESHOW_NAVIGATOR_ICON_VALUE</option>
 					<option value="1">TPL_SEB_SLIDESHOW_NAVIGATOR_GLYPH_VALUE</option>
 					<option value="2">TPL_SEB_SLIDESHOW_NAVIGATOR_FA_VALUE</option>
 				</field>
-				<field name="variation_default" type="cck" construction="core_variation" default="seb_css3" label="TPL_SEB_SLIDESHOW_DEFAULT_VARIATION" description="" class="inputbox" />
+				<field name="slide_items" type="number" default="1" min="1" max="6" step="1" label="TPL_SEB_SLIDESHOW_SLIDE_ITEMS_LABEL" description="TPL_SEB_SLIDESHOW_SLIDE_ITEMS_DESC" class="inputbox" />
 			</fieldset>
 		</fields>
 	</config>

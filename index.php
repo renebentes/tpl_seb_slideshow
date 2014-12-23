@@ -17,9 +17,10 @@ if ($cck->initialize() === false)
 	return;
 
 // -- Prepare
-$items = $cck->getItems();
-$count = 0;
-$id    = !empty($cck->id_class) ? trim($cck->id_class) : 'generic-slideshow';
+$items      = $cck->getItems();
+$itemsSlide = $cck->getStyleParam('slide_items');
+$id         = !empty($cck->id_class) ? trim($cck->id_class) : 'generic-slideshow';
+$count      = 0;
 
 if ($cck->getStyleParam('navigator') == 1)
 {
@@ -46,14 +47,28 @@ else
 if (!empty($items)) : ?>
 <div id="<?php echo $id; ?>" class="carousel slide" data-ride="carousel">
 	<ol class="carousel-indicators">
-  <?php for($i = 0; $i < $count; $i++) : ?>
+  <?php for ($i = 0; $i < round(count($items) / $itemsSlide); $i++) : ?>
     <li data-target="#<?php echo $id; ?>" data-slide-to="<?php echo $i ?>"<?php echo $i == 0 ? ' class="active"' : null;?>></li>
   <?php endfor; ?>
   </ol>
 	<div class="carousel-inner" role="listbox">
-	<?php foreach ($items as $key => $item) : ?>
+	<?php foreach (array_chunk($items, $itemsSlide, true) as $row) : ?>
 		<div class="item<?php echo $count == 0 ? ' active' : null; ?>">
-			<?php echo $cck->renderItem($key); ?>
+    <?php if ($itemsSlide > 1) : ?>
+      <div class="row">
+    <?php endif; ?>
+    <?php foreach ($row as $key => $item) :
+      if ($itemsSlide > 1) : ?>
+        <div class="col-md-<?php echo round(12 / $itemsSlide); ?>">
+      <?php endif; ?>
+		      <?php echo $cck->renderItem($key); ?>
+      <?php if ($itemsSlide > 1) : ?>
+        </div>
+      <?php endif; ?>
+    <?php endforeach; ?>
+    <?php if ($itemsSlide > 1) : ?>
+      </div>
+    <?php endif; ?>
 		</div>
 	<?php $count++;
   endforeach; ?>

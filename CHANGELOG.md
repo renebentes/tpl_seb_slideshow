@@ -3,6 +3,8 @@ CHANGELOG
 
 Este arquivo refere-se às mudanças realizadas desde a versão inicial de desenvolvimento.
 
+* 0.1.2 - 23/12/2014
+  * Added - Parâmetro para indicar a quantidade de itens por slide
 * 0.1.2 - 16/12/2014
   * Fixed - Erro na ativação do plugin
 * 0.1.1 - 29/10/2014
